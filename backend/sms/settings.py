@@ -7,7 +7,7 @@ SECRET_KEY = 'django-secret-key'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 INSTALLED_APPS = [
@@ -77,9 +77,8 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
 CORS_ALLOW_ALL_ORIGINS = True
-
-
 
 
 CORS_ALLOW_HEADERS = [
@@ -100,8 +99,6 @@ MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 
-ALLOWED_HOSTS = ['*']
-
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [
@@ -111,3 +108,8 @@ os.path.join(BASE_DIR, 'build/static')
 TEMPLATES[0]['DIRS'] = [os.path.join(BASE_DIR, 'build')]
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+
+CSRF_TRUSTED_ORIGINS = [
+"https://student-management-system-py67.onrender.com"
+]
